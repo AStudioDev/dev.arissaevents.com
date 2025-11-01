@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2025-11-01T13:27:09.044Z",
+  "files": [
+    "platform.iife.js",
+    "style.css"
+  ],
+  "checksums": {
+    "platform.iife.js": "42a76bb2",
+    "style.css": "31668178"
+  }
+}

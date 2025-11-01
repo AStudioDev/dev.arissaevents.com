@@ -1,0 +1,13 @@
+{
+  "version": "1.0.555",
+  "files": {
+    "sdk": "/sdk-1.0.555.js",
+    "css": "/assets/style.css"
+  },
+  "fonts": {
+    "tilda-script": "/fonts/tilda-script-light.otf"
+  },
+  "checksums": {
+    "assets/style.css": "04c89cdf"
+  }
+}

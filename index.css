@@ -1,0 +1,150 @@
+/* Tailwind CSS is now loaded from platform bundle */
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@font-face {
+  font-family: 'Tilda Script';
+  src: url('/fonts/tilda-script-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    /* Изумрудно-золотая палитра */
+    --background: 150 30% 8%;
+    --foreground: 45 100% 95%;
+
+    --card: 155 35% 12%;
+    --card-foreground: 45 100% 95%;
+
+    --popover: 155 35% 12%;
+    --popover-foreground: 45 100% 95%;
+
+    --primary: 160 55% 35%;
+    --primary-foreground: 45 100% 95%;
+
+    --secondary: 42 75% 55%;
+    --secondary-foreground: 150 30% 10%;
+
+    --muted: 155 25% 20%;
+    --muted-foreground: 45 30% 70%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 150 30% 10%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 45 100% 95%;
+
+    --border: 155 30% 22%;
+    --input: 155 30% 18%;
+    --ring: 42 75% 55%;
+
+    --radius: 1.25rem;
+
+    /* Богатая изумрудно-золотая палитра */
+    --emerald-dark: 160 60% 15%;
+    --emerald: 160 55% 35%;
+    --emerald-light: 160 45% 45%;
+    --gold-bronze: 35 65% 45%;
+    --gold: 42 75% 55%;
+    --gold-glow: 45 90% 65%;
+    --gold-bright: 45 90% 65%;
+    --gold-light: 48 100% 85%;
+    --cream: 45 40% 92%;
+    --dark-base: 150 30% 5%;
+    --dark-surface: 155 30% 10%;
+    
+    /* Элегантные градиенты */
+    --gradient-spiral: radial-gradient(ellipse at 30% 50%, hsl(155 30% 10%) 0%, hsl(150 30% 6%) 40%, hsl(0 0% 0%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(155 30% 10% / 0.95) 0%, hsl(150 30% 8% / 0.98) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(155 35% 14%) 0%, hsl(155 35% 10%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 55%) 0%, hsl(35 65% 45%) 100%);
+    --gradient-emerald: linear-gradient(135deg, hsl(160 55% 35%) 0%, hsl(160 60% 20%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(42 75% 55% / 0.15) 0%, transparent 70%);
+    --gradient-shine: linear-gradient(135deg, 
+      transparent 0%, 
+      hsl(45 90% 65% / 0.1) 25%, 
+      hsl(160 55% 35% / 0.15) 50%, 
+      hsl(42 75% 55% / 0.1) 75%, 
+      transparent 100%);
+    
+    /* Мягкие свечения */
+    --glow-gold: 0 0 30px hsl(42 75% 55% / 0.3), 0 0 60px hsl(42 75% 55% / 0.15);
+    --glow-emerald: 0 0 30px hsl(160 55% 35% / 0.25), 0 0 60px hsl(160 55% 35% / 0.12);
+    --glow-warm: 0 0 40px hsl(35 65% 45% / 0.25), 0 0 80px hsl(42 75% 55% / 0.12);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.6), 0 0 0 1px hsl(160 55% 35% / 0.1);
+    --shadow-elevated: 0 12px 48px hsl(0 0% 0% / 0.8), 0 0 0 1px hsl(42 75% 55% / 0.15);
+    --shadow-button: 0 4px 20px hsl(42 75% 55% / 0.25);
+  }
+
+  .dark {
+    /* Использование той же изумрудно-золотой темы */
+    --background: 150 30% 8%;
+    --foreground: 45 100% 95%;
+
+    --card: 155 35% 12%;
+    --card-foreground: 45 100% 95%;
+
+    --popover: 155 35% 12%;
+    --popover-foreground: 45 100% 95%;
+
+    --primary: 160 55% 35%;
+    --primary-foreground: 45 100% 95%;
+
+    --secondary: 42 75% 55%;
+    --secondary-foreground: 150 30% 10%;
+
+    --muted: 155 25% 20%;
+    --muted-foreground: 45 30% 70%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 150 30% 10%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 45 100% 95%;
+
+    --border: 155 30% 22%;
+    --input: 155 30% 18%;
+    --ring: 42 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Оптимизация производительности анимаций */
+  * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+  
+  h1, h2, h3 {
+    @apply font-script;
+  }
+  
+  h4, h5, h6 {
+    @apply font-serif;
+  }
+}
