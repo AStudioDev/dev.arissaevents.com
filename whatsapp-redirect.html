@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <title>Связаться в WhatsApp</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #25d366;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .auto-redirect {
+            color: #888;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">💬</div>
+        <h1>Связаться в WhatsApp</h1>
+        <p class="subtitle">Организатор мероприятий Ирина Башмакова</p>
+
+        <button class="whatsapp-btn" onclick="openWhatsApp()">
+            📱 Написать в WhatsApp
+        </button>
+
+        <div class="spinner" id="spinner"></div>
+
+        <p class="auto-redirect">Автоматический переход через 3 секунды...</p>
+    </div>
+
+    <script>
+        // Open WhatsApp in a new tab/window
+        function openWhatsApp() {
+            var webUrl = "https://wa.me/77017289277";
+
+            // Show spinner
+            document.getElementById('spinner').style.display = 'block';
+
+            // Open WhatsApp web in a new tab
+            window.open(webUrl, '_blank', 'noopener,noreferrer');
+
+            // Hide spinner after a moment
+            setTimeout(function() {
+                document.getElementById('spinner').style.display = 'none';
+            }, 1000);
+        }
+
+        // Auto redirect after 3 seconds
+        setTimeout(function() {
+            openWhatsApp();
+        }, 3000);
+    </script>
+</body>
+</html>
